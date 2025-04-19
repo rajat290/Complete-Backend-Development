@@ -1,0 +1,2 @@
+Node js is a Runtime JavaScript Enviourment , which is open source , cross platform runtime for executing JavaScript code outside of a browser 
+

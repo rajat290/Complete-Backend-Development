@@ -1,0 +1,19 @@
+Node core module are the codes which used frequently by the node developers so , Node make them as a Built in noe js installation 
+*   **Built-in modules** are the modules which are already installed in the node js installation
+
+and just opposite is 
+
+*   **External modules** are the modules which are not installed in the node js installation , 
+
+WE WILL USE THESE MODULES FOR FREQUENTLY IN OUR LEARNING .....
+
+1. Fs (FILE Syatem) :  
+2. HTTP  := it creates server and it used to make connection between client and the server 
+
+3. HTTPS := it create secure connection between client and server
+4. Path := it is used to get the path of the file
+5  Path.os :=
+6. Events := 
+7. crypto := 
+8. URL := 
+
