@@ -12,7 +12,37 @@ Set headers and cookies
 
 
  Simple Bhasha (Kindergarten Style):
- 
+
 Soch le tu restaurant me waiter ko order deta hai (req)
 Aur phir waiter tere liye food leke aata hai (res)
 Jo waiter laaya, exact wahi tera res object hai.
+
+Commonly Used res Methods:
+
+Method | Purpose
+res.send() | Send string, buffer, or object (auto-detects)
+res.json() | Send JSON response
+res.status() | Set HTTP status code
+res.redirect() | Redirect to another route
+res.set() | Set headers
+res.sendFile() | Send a file to the client
+res.cookie() | Set cookie
+
+
+🔁 Chhota Flow Example:
+
+app.post('/login', (req, res) => {
+  const { username, password } = req.body;
+
+  if (username === 'admin' && password === '123') {
+    res.status(200).json({ message: "Login successful" });
+  } else {
+    res.status(401).json({ message: "Invalid credentials" });
+  }
+});
+
+
+🧠 Breakdown:
+We read client input via req.body
+
+Then we send a reply using res.status().json()
