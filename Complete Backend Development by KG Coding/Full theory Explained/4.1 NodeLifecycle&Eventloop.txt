@@ -1,0 +1,115 @@
+ Node.js Lifecycle & Event Loop — is the heart of how Node.js works.
+
+Yeh samajh gaya toh tu async, non-blocking, API, sab kuch mast samajhne lagega. Chal ekdum se breakdown karte hain!
+
+🔹 1. Official Definition (Technical Terms)
+
+✅ Node.js Lifecycle
+
+
+Node js refers to the sequence of phases Node js application goes through from start to finish initializtion , execution of code event handling and shut down 
+
+✅ Event Loop
+
+Event Loop is a core part of node js reuntime that handles asynchronous operations -- it allows node js ot perform non - bloking I/O event though its single threaded 
+
+"Imagine Node.js is a chef 🧑‍🍳 in a kitchen. But he's super fast — he doesn’t wait for boiling water or baking a cake to finish. He sets a timer ⏲️ and moves to the next task!"
+
+Chef = Node.js
+
+Tasks = Function calls (like file reading, API)
+
+Timers = Async functions (like setTimeout, fs.readFile)
+
+Event loop = The boss that tells the chef when pending tasks are done and it's time to handle them.
+
+
+🔹 3. Real-World Example
+
+
+You ask Node.js: "Please read the file."
+
+Node says: "Okay! But I won’t wait. I’ll do something else in the meantime."
+
+Once the file is ready, event loop says: "Hey Node, now the file is done, go back and handle it."
+
+Boom! That’s how Node.js is non-blocking and fast.
+
+🔹 4. Lifecycle Phases of Node.js
+1. Start Application
+Node starts, loads required modules.
+
+2. Execute Code
+Your code (sync and async) starts running.
+
+3. Register Event Listeners
+Async tasks like file read, API call, timers register callbacks.
+
+4. Enter Event Loop
+Node keeps checking: “Any task done yet?”
+
+5. Execute Callbacks
+When async task is done, event loop pushes it to callback queue.
+
+6. Exit
+When no tasks left, Node exits.
+
+🔹 5. How the Event Loop Works Internally
+The Event Loop has phases, and each phase has a queue of callbacks to run.
+
+┌─────────────────────────────┐
+│ 1. timers (setTimeout)      │
+│ 2. pending callbacks        │
+│ 3. idle, prepare            │
+│ 4. poll (I/O events)        │
+│ 5. check (setImmediate)     │
+│ 6. close callbacks          │
+└─────────────────────────────┘
+
+🔹 6. Simple Code Example to Feel Event Loop
+
+console.log("Start");
+
+setTimeout(() => {
+  console.log("⏳ Timeout callback");
+}, 0);
+
+setImmediate(() => {
+  console.log("📍 Immediate callback");
+});
+
+console.log("End");
+
+
+output :-
+Start
+End
+📍 Immediate callback
+⏳ Timeout callback
+
+
+Why is setImmediate called before setTimeout?
+Answer: They run in different event loop phases!
+
+🔹 7. Why It's Important for Job Interviews
+It shows you understand how Node handles async code.
+
+Helps in writing non-blocking, fast applications.
+
+Core for handling API requests, database calls, file system, etc.
+
+Common in interview Qs:
+🔹 Difference between setTimeout vs setImmediate
+🔹 How Node.js is single-threaded yet handles concurrency
+
+🔹 8. Interview-Smart Summary (1-liner)
+“Node.js uses an event-driven architecture powered by the event loop, allowing it to handle thousands of async tasks efficiently on a single thread.”
+
+
+🔚 Final Thoughts
+Node runs on single thread but can handle multiple tasks asynchronously.
+
+The event loop is what gives Node its superpower.
+
+This is the base of everything — from Express APIs to database calls.
+
