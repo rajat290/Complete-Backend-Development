@@ -46,3 +46,9 @@ app.post('/login', (req, res) => {
 We read client input via req.body
 
 Then we send a reply using res.status().json()
+
+
+🧾 Interview-Ready One-Liner:
+“The res object is used by the Express server to send responses to the client, whether it’s data, files, status codes, or redirection.”
+
+req + res Together
