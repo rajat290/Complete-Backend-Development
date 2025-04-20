@@ -1,67 +1,60 @@
-taking user input in backend meanas capturing data sent by the client 
-usually from a FORM, API, or URL and proessing it on the server
+Redirecting a request means sending the client from one URL to another . it tells the browser that the resource has moved to a differ location --- temporally or permanently 
 
-Soch tu ek teacher hai, students tujhe answers batate hain (input dete hain). Tu wo answers sunta hai aur check karta hai. Waise hi backend server user se input leta hai aur us par kaam karta hai — jaise data save karna, validate karna, ya response dena.
+Soch tu kisi ko dukaan A bhejne wala tha, lekin vo band thi, to tu bola “waha mat jao, B wali dukaan pe chale jao!” — yehi hota hai redirecting. Server client ko bolta hai: “change your path and go to another locatio
 
+🌍 Real-World Examples:
+After login → Redirect to dashboard
 
-Real-World Examples:
-Login form me username/password lena
+After form submission → Redirect to success page
 
-Search bar me user input ka keyword lena
+Redirecting old URLs to new URLs
 
-Feedback form ka data lena
+Short URL (like bit.ly) → redirect to actual page
 
-
-🔹 How to Run
-node input.js
+Node.js Example (Raw)
 
 
-1. Node.js (Raw) – Input from Command Line
-📁 File: input.js
+const http = require('http');
 
-const readline = require('readline');
-
-// Interface create karna for reading input
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
+const server = http.createServer((req, res) => {
+  if (req.url === '/old-home') {
+    // 301 means permanent redirect
+    res.writeHead(301, { Location: '/new-home' });
+    res.end();
+  } else if (req.url === '/new-home') {
+    res.write('You are on the NEW home page!');
+    res.end();
+  } else {
+    res.write('Welcome!');
+    res.end();
+  }
 });
 
-// Input lena
-rl.question("What is your name? ", (name) => {
-  console.log(`Hello, ${name}! Welcome to backend world.`);
-  rl.close();
+server.listen(3000, () => {
+  console.log("🚀 Server running on http://localhost:3000");
 });
 
 
-2. Express.js – Input from Frontend / API
-🧪 Type of inputs:
-Query parameters → req.query
+ Try:
 
-URL params → req.params
+Go to http://localhost:3000/old-home
 
-Form/JSON body → req.body
+You’ll be redirected to /new-home
 
 
-File: server.js
+Express.js Example
 
 const express = require('express');
 const app = express();
 const port = 3000;
 
-// Middleware to parse JSON data
-app.use(express.json());
-
-// GET input from query
-app.get('/greet', (req, res) => {
-  const name = req.query.name;
-  res.send(`Hello ${name}, this is a GET request!`);
+app.get('/old-home', (req, res) => {
+  // 302 by default (temporary redirect)
+  res.redirect('/new-home');
 });
 
-// POST input from body
-app.post('/greet', (req, res) => {
-  const name = req.body.name;
-  res.send(`Hello ${name}, this is a POST request!`);
+app.get('/new-home', (req, res) => {
+  res.send("You're on the NEW home page!");
 });
 
 app.listen(port, () => {
@@ -69,13 +62,19 @@ app.listen(port, () => {
 });
 
 
- Test it with Postman or browser:
-GET: http://localhost:3000/greet?name=Ankit
+🧪 Try:
 
-POST (JSON body): { "name": "Ankit" }
+Go to http://localhost:3000/old-home
+
+Automatically lands on /new-home
 
 
+ Bonus Knowledge:
+Code	Type of Redirect	Description
+301	Permanent	SEO-friendly, tells browser this change is forever
+302	Temporary	Temporary redirect (default in Express)
+307/308	Modern redirects	Preserve request method (POST stays POST etc.)
 
-Interview-Ready One-Liner:
 
-"User input in backend refers to any data sent by the client (via URL, query string, or request body), which the server captures and processes using Node’s native modules or Express methods like req.query, req.params, and req.body."
+🎯 Interview-Ready One-Liner:
+"Redirecting requests means instructing the client to visit a different URL, which can be implemented using raw Node.js res.writeHead or Express’s built-in res.redirect() method."
