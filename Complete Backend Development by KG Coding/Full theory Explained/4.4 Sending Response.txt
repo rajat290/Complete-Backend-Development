@@ -9,3 +9,10 @@ Set status codes
 Redirect users
 
 Set headers and cookies
+
+
+ Simple Bhasha (Kindergarten Style):
+ 
+Soch le tu restaurant me waiter ko order deta hai (req)
+Aur phir waiter tere liye food leke aata hai (res)
+Jo waiter laaya, exact wahi tera res object hai.
