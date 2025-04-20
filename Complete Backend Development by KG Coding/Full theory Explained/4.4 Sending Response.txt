@@ -52,3 +52,16 @@ Then we send a reply using res.status().json()
 “The res object is used by the Express server to send responses to the client, whether it’s data, files, status codes, or redirection.”
 
 req + res Together
+
+
+app.get('/user/:id', (req, res) => {
+  const id = req.params.id;
+  res.send(`User ID is ${id}`);
+});
+
+\
+Yahaan:
+
+req.params.id se input mila
+
+res.send() se output gaya
