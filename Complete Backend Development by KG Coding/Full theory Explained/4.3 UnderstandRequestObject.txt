@@ -26,3 +26,6 @@ Kya extra bola (query params)
 
 Kya naam bataya (headers)
 
+
+📌 Interview-Ready Answer:
+“The req object in Express represents the client’s request, containing URL, method, headers, query parameters, route params, and body. It helps the server understand what the client wants.”
