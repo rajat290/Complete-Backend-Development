@@ -5,3 +5,7 @@ Routing in Express refers to defining endpoints (URLs) on your server that respo
 
 
 When a client (like browser or frontend) sends a request to your server at a specific path (like /users), Express matches it with a route and runs the associated callback function.
+
+
+📌 Interview-Ready One-Liner:
+“Routing in Express is the mechanism of handling client requests based on HTTP methods and paths. It helps organize the server logic and deliver appropriate responses for each endpoint.”
