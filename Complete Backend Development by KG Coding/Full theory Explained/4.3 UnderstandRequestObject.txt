@@ -13,3 +13,16 @@ Query params
 Route params
 
 Cookies, etc.
+
+(Simple Words):
+Soch le ki Express ek hotel ka receptionist hai. Jab koi customer (client) aata hai aur kuch order karta hai (HTTP request), to req object us order ki poori detail chitthi hai —
+Usme likha hota hai:
+
+Customer ne kya manga (body)
+
+Kis table se order kiya (URL/params)
+
+Kya extra bola (query params)
+
+Kya naam bataya (headers)
+
