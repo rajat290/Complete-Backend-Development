@@ -1,0 +1,81 @@
+taking user input in backend meanas capturing data sent by the client 
+usually from a FORM, API, or URL and proessing it on the server
+
+Soch tu ek teacher hai, students tujhe answers batate hain (input dete hain). Tu wo answers sunta hai aur check karta hai. Waise hi backend server user se input leta hai aur us par kaam karta hai — jaise data save karna, validate karna, ya response dena.
+
+
+Real-World Examples:
+Login form me username/password lena
+
+Search bar me user input ka keyword lena
+
+Feedback form ka data lena
+
+
+🔹 How to Run
+node input.js
+
+
+1. Node.js (Raw) – Input from Command Line
+📁 File: input.js
+
+const readline = require('readline');
+
+// Interface create karna for reading input
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
+
+// Input lena
+rl.question("What is your name? ", (name) => {
+  console.log(`Hello, ${name}! Welcome to backend world.`);
+  rl.close();
+});
+
+
+2. Express.js – Input from Frontend / API
+🧪 Type of inputs:
+Query parameters → req.query
+
+URL params → req.params
+
+Form/JSON body → req.body
+
+
+File: server.js
+
+const express = require('express');
+const app = express();
+const port = 3000;
+
+// Middleware to parse JSON data
+app.use(express.json());
+
+// GET input from query
+app.get('/greet', (req, res) => {
+  const name = req.query.name;
+  res.send(`Hello ${name}, this is a GET request!`);
+});
+
+// POST input from body
+app.post('/greet', (req, res) => {
+  const name = req.body.name;
+  res.send(`Hello ${name}, this is a POST request!`);
+});
+
+app.listen(port, () => {
+  console.log(`🚀 Server running on http://localhost:${port}`);
+});
+
+
+ Test it with Postman or browser:
+GET: http://localhost:3000/greet?name=Ankit
+
+POST (JSON body): { "name": "Ankit" }
+
+
+
+Interview-Ready One-Liner:
+
+"User input in backend refers to any data sent by the client (via URL, query string, or request body), which the server captures and processes using Node’s native modules or Express methods like req.query, req.params, and req.body."
