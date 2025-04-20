@@ -1,0 +1,15 @@
+🔧 Technical Definition:
+The request object (often written as req) in Express.js represents the HTTP request made by the client (browser, frontend, etc.).
+It contains all the details sent from the client like:
+
+URL
+
+Headers
+
+Body
+
+Query params
+
+Route params
+
+Cookies, etc.
