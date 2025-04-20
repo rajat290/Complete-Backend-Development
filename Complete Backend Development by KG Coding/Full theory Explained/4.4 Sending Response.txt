@@ -1,0 +1,11 @@
+ Technical Definition:
+The response object (written as res) in Express is used by the server to send back a response to the client.
+It gives you methods to:
+
+Send text, JSON, or HTML
+
+Set status codes
+
+Redirect users
+
+Set headers and cookies
