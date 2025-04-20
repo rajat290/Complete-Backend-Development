@@ -29,3 +29,50 @@ Kya naam bataya (headers)
 
 📌 Interview-Ready Answer:
 “The req object in Express represents the client’s request, containing URL, method, headers, query parameters, route params, and body. It helps the server understand what the client wants.”
+
+🧪 Example:
+
+Frontend sends: 
+
+GET http://localhost:3000/user/42?role=admin
+
+
+Express route:
+app.get('/user/:id', (req, res) => {
+  console.log(req.params.id);     // "42"
+  console.log(req.query.role);    // "admin"
+});
+
+
+ req object has:
+
+ req = {
+  method: "GET",
+  url: "/user/42?role=admin",
+  params: { id: "42" },
+  query: { role: "admin" },
+  headers: { ... },
+  body: {}  // GET request usually has empty body
+}
+
+Most Used Parts of req:
+
+
+Part | Usage Example
+req.params | URL se dynamic route: /user/:id
+req.query | Search/filter like ?role=admin
+req.body | Form data / JSON sent from client
+req.headers | Metadata, like tokens or content-type
+
+Real-world Analogy:
+
+
+Aap zomato pe order karte ho:
+
+Aapka address = params
+
+Pizza extra cheese = query
+
+Full order = body
+
+Zomato ka delivery guy (Express) ke paas ek request slip (req object) hoti hai jisme sab likha hota hai.
