@@ -13,3 +13,60 @@ Real-time video/audio streaming
 Sending big JSON/XML responses
 
 Reading from network/socket
+
+Types of Streams in Node.js
+Stream Type	What it Does	Example
+Readable	Read data	fs.createReadStream()
+Writable	Write data	fs.createWriteStream()
+Duplex	Read + Write both	TCP socket
+Transform	Modify data while streaming	Compression (zlib)
+
+Example: Read Big File Using Stream
+
+const fs = require('fs');
+
+const readableStream = fs.createReadStream('bigfile.txt', {
+  encoding: 'utf-8',
+  highWaterMark: 64 * 1024 // 64KB chunks
+});
+
+readableStream.on('data', (chunk) => {
+  console.log('Received chunk:');
+  console.log(chunk);
+});
+
+readableStream.on('end', () => {
+  console.log('File reading finished ✅');
+});
+
+
+ Example: Pipe Stream (Read → Write)
+ const fs = require('fs');
+
+const reader = fs.createReadStream('input.txt');
+const writer = fs.createWriteStream('output.txt');
+
+reader.pipe(writer); // Magic line 🔥
+
+ pipe() connects two streams together. Super efficient and elegant.
+
+Real-Life Applications of Streams
+Video platforms (YouTube, Netflix) stream content
+
+File upload/download in chunks
+
+Logs streaming from server
+
+Live chat apps using WebSockets
+
+Bonus: Stream Events
+Event	Meaning
+data	Chunk of data received
+end	No more data
+error	Something went wrong
+finish	All data written (for write streams)
+
+
+ Interview-Ready One-Liner:
+"Streams in Node.js handle large or continuous data efficiently by processing it chunk-by-chunk instead of loading it all at once, using interfaces like Readable, Writable, Duplex, and Transform."
+
