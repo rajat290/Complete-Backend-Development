@@ -1,0 +1,15 @@
+🔶 Topic: Streams in Node.js
+📘 Technical Definition:
+A stream in Node.js is an abstract interface for working with streaming data — that is, data that might not be available all at once and instead arrives in chunks.
+
+👶 Kindergarten Explanation:
+Soch le ek bucket bhar paani lene ki jagah, ek pipe laga diya — paani thoda thoda karke aata jaa raha hai. Waise hi, stream data thoda thoda karke deta hai, ek saath sab kuch nahi.
+
+🧠 Why Use Streams?
+Large file read/write without memory crash
+
+Real-time video/audio streaming
+
+Sending big JSON/XML responses
+
+Reading from network/socket
