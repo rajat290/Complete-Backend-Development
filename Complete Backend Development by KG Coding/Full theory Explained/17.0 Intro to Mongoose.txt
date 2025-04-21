@@ -1,0 +1,4 @@
+
+Mongoose is a 
+popular, open-source ORM (Object-Relational Mapping) tool for MongoDB. It provides a
+way to interact with MongoDB databases using a more traditional, SQL-like syntax.
