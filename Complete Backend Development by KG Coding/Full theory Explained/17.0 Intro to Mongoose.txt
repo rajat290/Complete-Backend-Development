@@ -2,3 +2,6 @@
 Mongoose is a 
 popular, open-source ORM (Object-Relational Mapping) tool for MongoDB. It provides a
 way to interact with MongoDB databases using a more traditional, SQL-like syntax.
+Mongoose is a popular choice for Node.js applications, and it's widely used in the industry.
+Here's an example of how you might use Mongoose to interact with a MongoDB database
+
