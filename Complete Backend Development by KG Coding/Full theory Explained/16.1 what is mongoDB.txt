@@ -1,0 +1,3 @@
+MongoDB is the product and the company that builds it.
+2.The name comes from the work Humongous.
+NoSQL Document Database: Stores data in flexible, JSON-likedocuments.Dynamic Schema: Allows fields to vary across documents withoutpredefined schemas.High Performance: Optimized for fast read and write operations.Scalability: Supports horizontal scaling through sharding.High Availability: Provides replication with automatic failover.Rich Query Capabilities: Offers powerful querying, indexing, andaggregation.Geospatial and Text Search: Includes support for location-basedand full-text queries.Cross-Platform Compatibility: Works with various operatingsystems and programming languages.Easy Integration: Integrates smoothly with modern developmentstacks.
