@@ -1,0 +1,9 @@
+🔥 9.1 — What is Express.js?
+
+express js is a fast , unopinioted , minimalist web framework for nodejs that simplifies building APIs and web servers.
+
+🧒 Kindergarten Explanation:
+Socho Node.js ek raw kitchen hai jisme sab tools hai (like oven, knife, gas), but sab manually karna padta hai.
+
+Aur Express.js ek smart chef hai — jo bolne se khana bana deta hai. Tum bolo "burger chahiye", toh chef turant ready kar deta hai — bina har step manually kare.
+
