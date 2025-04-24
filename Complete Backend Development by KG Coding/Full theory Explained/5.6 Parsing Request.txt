@@ -1,0 +1,122 @@
+Parsing Requests in Node.js
+
+
+Ye topic sabse zyada practical hai jab tu client se data receive kar raha hota hai (form, API, frontend se input, etc.)
+Isme req object se data extract karte hain based on the type of request.
+
+🔥 Topics We’ll Cover in Parsing Requests:
+#	Topic	Description
+1️⃣	req.url & req.method	Basic request details
+2️⃣	Query Parameters	From URL?key=value
+3️⃣	Route Parameters	Dynamic parts of URL
+4️⃣	Body Parsing	Data from POST/PUT
+5️⃣	JSON Parsing	For APIs
+6️⃣	Form Parsing (URL Encoded)	From HTML forms
+7️⃣	File Uploads (optional)	Using multer, later with Express
+
+
+🧱 1. Basic Request Info: req.url & req.method
+
+
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+  console.log('URL:', req.url);         // /about?name=raj
+  console.log('Method:', req.method);   // GET, POST etc.
+  res.end('Check console');
+});
+
+server.listen(3000);
+
+
+🔎 2. Query Parameters (URL ke ? ke baad ka part)
+
+📌 Example URL:
+http://localhost:3000/search?name=raj&age=25
+
+const http = require('http');
+const url = require('url');
+
+http.createServer((req, res) => {
+  const parsed = url.parse(req.url, true);  // true to get query as object
+  const query = parsed.query;
+
+  res.write(`Hello ${query.name}, You are ${query.age} years old`);
+  res.end();
+}).listen(3000);
+
+
+🛣️ 3. Route Parameters (Only in Express)
+🚫 Not native to Node — Route params jaise /user/:id only work in Express
+Tu chahe to manually req.url.split() se extract kar sakta hai in Node.
+
+
+🧠 4. Parsing Body (Most Important for POST/PUT)
+
+🟫 Raw Node Example:
+
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+  if (req.method === 'POST') {
+    let body = '';
+
+    req.on('data', chunk => {
+      body += chunk;
+    });
+
+    req.on('end', () => {
+      console.log('Body:', body);
+      res.end('Data received');
+    });
+  }
+});
+
+server.listen(3000);
+
+
+📦 Postman se ya frontend form se POST karo
+
+{ "name": "raj", "city": "delhi" }
+
+🧾 5. Parsing JSON Data
+req.on('end', () => {
+  const parsedData = JSON.parse(body);
+  console.log('Name:', parsedData.name);
+});
+
+
+🧾 6. Parsing Form Data (application/x-www-form-urlencoded)
+
+HTML form se aane wale data ko parse karne ke liye
+
+const querystring = require('querystring');
+
+req.on('end', () => {
+  const parsed = querystring.parse(body);
+  console.log('Parsed Form:', parsed);
+});
+
+
+🎒 Optional: Parsing File Uploads
+Ye Node me hard hota hai manually, use karte hain later multer with Express.
+
+✅ Summary Table
+Data Type	From	Method
+URL & Method	Request Info	req.url, req.method
+Query Params	URL ?	url.parse(...).query
+Route Params	Path	Only in Express
+JSON Body	API/JS	Collect chunks + JSON.parse()
+Form Body	HTML Form	Collect chunks + querystring.parse()
+🔥 Interview-Ready One-Liner:
+"Parsing requests in Node.js means extracting data sent from the client via URL, query strings, or request body, using core modules like url, querystring, and event listeners on the request stream."
+
+🧪 Real-Life Examples
+App	Parsing What
+🔍 Search bar	Query params
+🧾 Form submission	Form body
+🛒 Add to cart API	JSON payload
+👤 Login page	POST body
+📷 Image upload	File stream (with multer/express)
+📌 Bonus Tip:
+Use online tools like httpbin.org or Postman to test your request payloads and headers in real-time.
