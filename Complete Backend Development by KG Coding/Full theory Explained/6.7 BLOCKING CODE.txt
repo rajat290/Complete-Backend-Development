@@ -1,0 +1,19 @@
+
+
+blocking code means when we run those code who blocks thw whole main thread and it wiats until its task got completed is called the blocking code or synchronous code 
+
+🧒 Easy Explanation:
+You stand still until your tea is ready — you do nothing else.
+
+🌍 Real-world Example:
+Using fs.readFileSync() instead of fs.readFile() — app freezes for all users till the task finishes.
+
+🧠 Interview One-liner:
+"Blocking code in Node.js stops the event loop until the operation completes, leading to performance issues."
+
+
+const fs = require('fs');
+
+const data = fs.readFileSync('data.txt', 'utf-8');
+console.log(data);
+console.log("File read completed");
