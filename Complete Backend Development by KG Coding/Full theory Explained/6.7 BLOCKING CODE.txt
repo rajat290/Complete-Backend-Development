@@ -17,3 +17,15 @@ const fs = require('fs');
 const data = fs.readFileSync('data.txt', 'utf-8');
 console.log(data);
 console.log("File read completed");
+
+
+✅ Summary Table:
+Concept	One-Liner Summary
+Event-Driven	Node listens for events and reacts via callbacks
+Single Threaded	One thread handles everything with async magic
+V8	Executes JS code
+libuv	Handles event loop, file system, threads
+Node Runtime	Complete environment: V8 + libuv + Node APIs
+Event Loop	Core of async: serves tasks when they’re ready
+Async Code	Runs in background, doesn’t block main thread
+Blocking Code	Waits and blocks everything else
