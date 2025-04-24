@@ -1,0 +1,5 @@
+"Node.js is a single-threaded, event-driven runtime built on the V8 engine and libuv library that uses an event loop to handle asynchronous, non-blocking operations efficiently."
+
+⚡️ Is one-liner mein poora Chapter 6 ka soul chipka diya hai — event-driven nature, async code, single-threading, V8, libuv, event loop — sab kuch!
+
+Chahe interviewer pooche "Node.js ka architecture kya hota hai?" ya "How does Node handle concurrency despite being single-threaded?" — ye line goli ki tarah chalegi 💥
