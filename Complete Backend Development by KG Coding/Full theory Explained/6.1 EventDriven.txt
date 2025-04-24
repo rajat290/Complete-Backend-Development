@@ -1,0 +1,22 @@
+Node js event driven means it listens for the event and triggers functions (callbacks), when those Events happen.
+
+🧒 Easy Explanation:
+
+Imagine you are the only guy at a tea stall , you don't make tea for everyone in order , you just take orders (Events), then serve tea whenever its ready - no waiting !
+
+🌍 Real-world Example:
+Button click on a website — you don’t block the page; you just wait for the click event.
+
+🧠 Interview One-liner:
+Node js Follows an event driven architecture, where the flow of the program is determind by events like user input or server responses 
+
+
+const EventEmitter = require('events');
+const myEmitter = new EventEmitter();
+
+myEmitter.on('teaReady', () => {
+  console.log("Serving Tea!");
+});
+
+console.log("Order taken...");
+myEmitter.emit('teaReady');
