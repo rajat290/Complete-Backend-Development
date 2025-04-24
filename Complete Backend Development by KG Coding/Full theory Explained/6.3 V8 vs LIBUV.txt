@@ -1,0 +1,16 @@
+🔸 6.3 V8 vs LIBUV
+Technical Definition:
+
+V8 is Google’s JavaScript engine that executes JS code (used in Chrome and Node).
+
+libuv is a C library that handles asynchronous I/O, event loop, threads, file system, etc.
+
+🧒 Easy Explanation:
+V8 = Brain that understands JS
+libuv = Muscles that do multitasking, background work
+
+🌍 Real-world Example:
+You (V8) make decisions, and your hands/legs (libuv) do the actions in the background like walking or typing.
+
+🧠 Interview One-liner:
+"V8 executes JavaScript code, while libuv handles low-level OS tasks like threads, file systems, and event loop in Node.js."
