@@ -1,0 +1,51 @@
+Bhai ab baat karte hain Buffer ki — yeh bhi streams ke saath bahut hi important concept hai, aur thoda confusing bhi hota hai jab tak usko halke me na samjha jaye 😎
+
+
+🔷 What is a Buffer in Node.js?
+
+
+📘 Technical Definition:
+A Buffer in Node.js is a temporary memory storage used to hold binary data while it is being moved from one place to another, especially in streaming and file handling.
+
+
+👶 Kindergarten Explanation:
+Soch le — tu ek balti leke paani bhar raha hai. Jab tak wo poori nahi bharti, tu usko kahin aur nahi le jaata.
+
+🪣 Buffer = balti 💧 Chunk = paani
+
+Jab chunk aata hai, buffer (balti) me store hota hai... fir jab enough data ho jata hai ya process karna hota hai, tab aage bhej dete hain.
+
+Real Example
+
+const fs = require('fs');
+
+const stream = fs.createReadStream('demo.txt');
+
+stream.on('data', (chunk) => {
+  console.log('Received chunk of type:', typeof chunk);
+  console.log(chunk); // Output will be a Buffer
+});
+
+🧾 Output
+Received chunk of type: object
+<Buffer 48 65 6c 6c 6f 20 57 6f 72 6c 64>
+
+
+🛠 How to convert Buffer to string?
+
+console.log(chunk.toString()); // Converts Buffer to readable string
+
+
+🔄 Buffer manually banana
+
+const buf = Buffer.from('Hello World');
+console.log(buf);           // <Buffer 48 65 6c 6c 6f 20 57 6f 72 6c 64>
+console.log(buf.toString()); // Hello World
+
+🧠 Bonus: Stream Events
+
+Event | Meaning
+data | Chunk of data received
+end | No more data
+error | Something went wrong
+finish | All data written (for write streams)
