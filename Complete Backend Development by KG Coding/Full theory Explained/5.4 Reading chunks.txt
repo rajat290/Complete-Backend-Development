@@ -1,0 +1,50 @@
+Bhai ab baat karte hain "Chunks" ki — ye word har baar aa raha hai jab bhi streams ki baat hoti hai na. Chalo usko tod ke simple karte hain 👇
+
+🔶 What are Chunks in Node.js Streams?
+
+📘 Technical Definition:
+A chunk is a small piece of data that is processed one at a time by a stream, rather than loading the entire data set into memory.
+
+👶 Kindergarten Explanation:
+Soch le bhai — tere paas ek laddu ka dabba hai (file). Agar tu ek saath poora khaye, pet dukh jayega 🤕.
+
+Isliye tu ek-ek laddu (chunk) khata hai — dheere dheere, aaram se digest hota hai 😋.
+
+Waise hi stream file ka data ek ek tukda (chunk) me deta hai.
+
+🧪 Code Example Showing Chunks
+
+const fs = require('fs');
+
+const stream = fs.createReadStream('bigfile.txt', { encoding: 'utf-8' });
+
+stream.on('data', (chunk) => {
+  console.log('--- New Chunk ---');
+  console.log(chunk); // Har baar ek part of file
+});
+
+Ye code console me file ke parts alagsa print karega — har baar jab ek chunk milega.
+
+💡 Why Chunks Matter?
+
+Reduce memory usage (no need to load full file).
+
+Process data as it arrives (real-time).
+
+Makes handling big files or continuous data possible.
+
+Improves performance.
+
+.
+
+🔄 Size of Chunk: highWaterMark
+You can control chunk size like this
+
+const stream = fs.createReadStream('bigfile.txt', {
+  encoding: 'utf-8',
+  highWaterMark: 16 * 1024 // 16 KB per chunk
+});
+
+
+🎯 Interview-Ready One-Liner:
+"A chunk is a small portion of data that a stream reads or writes at a time, enabling efficient memory usage and performance when dealing with large or continuous data."
