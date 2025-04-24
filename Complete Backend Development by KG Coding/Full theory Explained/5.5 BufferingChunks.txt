@@ -42,10 +42,14 @@ const buf = Buffer.from('Hello World');
 console.log(buf);           // <Buffer 48 65 6c 6c 6f 20 57 6f 72 6c 64>
 console.log(buf.toString()); // Hello World
 
-🧠 Bonus: Stream Events
+🧠 Why are Buffers important?
 
-Event | Meaning
-data | Chunk of data received
-end | No more data
-error | Something went wrong
-finish | All data written (for write streams)
+Purpose	Description
+🔌 Stream Handling	Buffers hold data until it's ready to be processed
+🧠 Memory Management	Avoids memory overload for big files
+🎧 Media	Used for audio/video streaming
+📤 Network	Data transmission in chunks
+
+
+🎯 Interview-Ready One-Liner:
+"A Buffer is a temporary memory storage used in Node.js to handle raw binary data, especially during file or stream operations."
