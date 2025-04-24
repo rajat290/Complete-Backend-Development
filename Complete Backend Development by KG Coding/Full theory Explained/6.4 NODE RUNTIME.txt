@@ -1,0 +1,13 @@
+ 6.4 NODE RUNTIME
+Technical Definition:
+Node.js Runtime = V8 Engine + libuv + Node APIs
+It's the complete environment to run JS outside browser.
+
+🧒 Easy Explanation:
+Browser is one room to run JS. Node.js runtime is another room with extra tools (file system, server, streams) where JS can do more things.
+
+🌍 Real-world Example:
+Browser is like a car for short trips; Node.js is like a truck — handles heavy work like server, file reading.
+
+🧠 Interview One-liner:
+"The Node.js runtime is a JS environment built on V8 and libuv, providing tools for building scalable server-side applications."

@@ -1,0 +1,17 @@
+Technical Definition:
+The event loop is the mechanism that checks the callback queue and executes pending tasks from the event table one by one, allowing non-blocking I/O.
+
+🧒 Easy Explanation:
+A chef (event loop) sees dishes (events) ready and serves them one by one as soon as they’re cooked.
+
+🌍 Real-world Example:
+You cook rice, boil milk, and clean — not one by one, but you check each one’s status and do the next task when the first finishes.
+
+🧠 Interview One-liner:
+"The event loop in Node.js continuously checks for completed events and executes their callbacks in a non-blocking manner."
+\
+console.log("Start");
+setTimeout(() => {
+  console.log("Timeout Done");
+}, 0);
+console.log("End");
