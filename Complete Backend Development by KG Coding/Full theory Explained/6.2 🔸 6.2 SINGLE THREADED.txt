@@ -1,0 +1,12 @@
+🔸 6.2 SINGLE THREADED
+
+Node uses a single thread to handle all the requests , but thanks to asynchronous programming and the event loop , it can handle thousands of requests without blocking 
+
+🧒 Easy Explanation:
+One waiter (thread) serving many customers — he doesn’t wait for tea to be ready. He just keeps moving!
+
+🌍 Real-world Example:
+A restaurant where the waiter doesn’t cook but takes multiple orders and serves food as it becomes ready.
+
+🧠 Interview One-liner:
+"Node.js is single-threaded but uses asynchronous callbacks and non-blocking I/O to handle concurrency efficiently."
