@@ -1,0 +1,18 @@
+Async code is that kind of functionality in node or can say its avail by js , by using it we can run our code in the background without blocking the main thread , we can achive it by using callbacks, promises, or async/ await 
+
+
+🧒 Easy Explanation:
+You order pizza (async), keep playing PUBG. When it comes, the delivery guy rings the bell — you don’t wait doing nothing.
+
+🌍 Real-world Example:
+API calls, database queries, file uploads — all async.
+
+🧠 Interview One-liner:
+"Async code in Node.js allows non-blocking execution, helping scale applications efficiently
+
+const fs = require('fs');
+
+fs.readFile('data.txt', 'utf-8', (err, data) => {
+  console.log(data);
+});
+console.log("Reading file...");
