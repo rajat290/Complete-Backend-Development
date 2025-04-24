@@ -1,0 +1,53 @@
+Bhai chalo Express.js ka sabse important topic start karte hain:
+
+🔧 Middleware and Adding Middleware in Express.js
+
+Middleware in Express is a function that has access to the request , response and the next middleware in the application's request- response cycle.
+
+💡 Middleware functions run before the final route handler.
+
+🧒 Easy Explanation => 
+Socho ek restaurant hai. Jab koi customer (request) aata hai, usko directly khaana nahi milta.
+
+🔍 Pehle guard check karta hai token — (Authentication middleware)
+
+📦 Fir waiter check karta hai order valid hai ya nahi — (Validation middleware)
+
+🍽️ Fir chef khana banata hai — (Final Route Handler)
+
+Middleware = woh har wo banda hai jo request ko process karta hai final response se pehle.
+
+🧠 Middleware Parameters
+
+(req, res, next)
+
+req: Request object (client se kya aaya)
+
+res: Response object (server kya bhejega)
+
+next(): Next middleware ya route pe le jaata hai
+
+
+✅ Types of Middleware:
+============================================================
+
+Type	            ||            Example Purpose
+Application-level	||         Used globally in app
+Route-level	        ||         Used for specific routes
+Built-in	        ||         express.json(), express.static()
+Third-party	        ||         morgan, cors, helmet, etc.
+Error-handling	    ||         (err, req, res, next) wala
+
+ How to Add Middleware
+
+ Application -level Middleware
+
+ const express = require('express');
+ const app = express();
+
+ // custom middle ware 
+
+ app.use((req, res, next ) => {
+    console.log(`Request URL : ${req.url}`);
+    next(); // it will take us to next middleware or route 
+ })
