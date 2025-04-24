@@ -10,8 +10,18 @@ You cook rice, boil milk, and clean — not one by one, but you check each one�
 🧠 Interview One-liner:
 "The event loop in Node.js continuously checks for completed events and executes their callbacks in a non-blocking manner."
 \
+
+🧪 Visual Example
+
 console.log("Start");
 setTimeout(() => {
   console.log("Timeout Done");
 }, 0);
 console.log("End");
+
+
+Output
+
+Start
+End
+Timeout Done
