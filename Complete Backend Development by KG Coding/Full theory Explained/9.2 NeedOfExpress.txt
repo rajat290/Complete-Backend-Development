@@ -1,0 +1,33 @@
+
+
+🚀 Why Use Express.js/ Need of Express ?
+
+Node mein sab kuch raw hota hai: routing, request-parsing, response-handling — sab kuch manually karna padta hai.
+
+Express.js yeh sab kaam asani se aur short code mein karwa deta hai.
+
+It helps in:
+
+🛣️ Creating routes
+
+🧠 Using middlewares
+
+🧾 Parsing request body
+
+🧰 Handling errors
+
+🏗️ Building RESTful APIs easily
+
+
+🌍 Real-World Examples of Express.js
+Instagram Backend APIs — to handle users, posts, comments.
+
+Food Delivery App — APIs to get restaurants, place orders, track delivery.
+
+Login Systems — signup/login endpoints with JWT tokens.
+
+Admin Dashboards — Express routes for admin CRUD operations.
+
+🧠 Interview-Ready Summary:
+Express.js makes building web servers and APIs with Node.js super easy by providing tools to handle routes, middlewares, requests, and responses — all while keeping code minimal and maintainable.
+
