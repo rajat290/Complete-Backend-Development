@@ -1,0 +1,35 @@
+// Step 1: Import the 'http' module
+const http = require('http');
+
+// Step 2: Create a server using the 'http' module
+const server = http.createServer((req, res) => {
+    // Step 3: Set the response header
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+
+    // Step 4: Write a response message
+    res.write('Hello, World!');
+
+    // Step 5: End the response
+    res.end();
+});
+
+// Step 6: Define the port number
+const PORT = 3000;
+
+// Step 7: Make the server listen on the defined port
+server.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+});
+
+const http = require('http');
+const server = http.createServer((req, res) => {
+    res.writeHeaad(200, {'Content-Type': 'text/plain' });
+    res.write('Hello, world!')
+    res.end();
+});
+
+const PORT = 3000;
+
+server.listen(PORT, () => {
+    console.log(`Server is running on {PORT}`);
+})
