@@ -1,0 +1,4 @@
+Nodejs server will:
+1.Create server and listen to incoming requests
+2.Business logic: validation, connect to db, actual processing of data.
+3.Return response HTML, JSON, CSS, JS
